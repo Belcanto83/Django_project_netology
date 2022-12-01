@@ -10,8 +10,6 @@ def index(request):
 def show_catalog(request, sort='name'):
     template = 'catalog.html'
 
-    phones = Phone.objects.all()
-
     reverse = False
     sort_param = request.GET.get('sort', sort)
     if sort_param == 'min_price':
@@ -22,7 +20,10 @@ def show_catalog(request, sort='name'):
     else:
         sort_field = sort_param
 
-    sorted_phones = sorted(phones, key=lambda itm: itm.__getattribute__(sort_field), reverse=reverse)
+    if not reverse:
+        sorted_phones = Phone.objects.all().order_by(sort_field)
+    else:
+        sorted_phones = Phone.objects.all().order_by(f'-{sort_field}')
 
     context = {'phones': sorted_phones}
     return render(request, template, context)
