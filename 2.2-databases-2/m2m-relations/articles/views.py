@@ -6,7 +6,7 @@ from articles.models import Article
 
 
 def articles_list(request):
-    template = 'articles/news.html'
+    template = 'articles/news_jquery.html'
     # ordering = ['-published_at', 'title']  # Сортировка по умолчанию прописана в Meta классе модели "Article"
 
     try:

@@ -30,5 +30,10 @@
 <script type="text/javascript" src="{% static "js/bootstrap.bundle.min.js" %}"></script>
 <!-- Bootstrap core JavaScript -->
 <script src="{% static  "js/jquery.min.js" %}"></script>
+<!-- JQuery-UI JavaScript library-->
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script>
+  $( ".draggable" ).draggable({ stack: "#draggable_set div" });
+</script>
 </body>
 </html>
