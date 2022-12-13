@@ -12,6 +12,15 @@
         <input id="myinput" type="text" name="servings" size="5">
     </form>
 </div>
+{% if servings == 1 %}
+<h3>Количество ингредиентов на {{ servings }} порцию:</h3>
+{% endif %}
+{% if servings > 1 and servings < 5 %}
+<h3>Количество ингредиентов на {{ servings }} порции:</h3>
+{% endif %}
+{% if servings > 4 %}
+<h3>Количество ингредиентов на {{ servings }} порций:</h3>
+{% endif %}
 <ol>
 {% for ingredient, amount in ingredients.items %}
     <li><p>{{ ingredient }}: {{ amount | floatformat:2 }}</p></li>

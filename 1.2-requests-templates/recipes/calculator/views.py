@@ -50,6 +50,7 @@ def show_recipe(request, recipe_key):
     context = {
         'recipe_key': recipe_key,
         'recipe_name': recipe_name,
-        'ingredients': ingredients_with_qty
+        'ingredients': ingredients_with_qty,
+        'servings': mult,
     }
     return render(request, 'calculator/recipe.html', context)
