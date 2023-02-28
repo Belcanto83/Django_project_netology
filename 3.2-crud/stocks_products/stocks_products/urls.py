@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from logistic.views import index
+from logistic.views import index, TestCICDView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('api/v1/', include('logistic.urls')),
+    path('test_cicd/', TestCICDView.as_view())
 ]

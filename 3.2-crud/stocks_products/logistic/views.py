@@ -2,6 +2,8 @@ from django.shortcuts import redirect
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 
 from logistic.Pagination import StockPagination
@@ -44,3 +46,9 @@ class StockViewSet(ModelViewSet):
 
 def index(request):
     return redirect('api/v1/')
+
+
+class TestCICDView(APIView):
+    @staticmethod
+    def get(request):
+        return Response('Hello World!')
