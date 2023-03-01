@@ -47,7 +47,7 @@ jobs:
         run: pip install -r 3.2-crud/stocks_products/requirements.txt
 
       - name: Линтинг
-        run: flake8 logistic/ --exclude=logistic/migrations/
+        run: flake8 logistic/ --exclude=3.2-crud/stocks_products/logistic/migrations/
 
       - name: Тесты
         run: python manage.py test
