@@ -2,9 +2,9 @@ name: Тестирование и развертывание проекта. CI/
 
 on:
   push:
-    branches: [django-cicd]
-#    paths:
-#      - 3.2-crud/stocks_products/**
+#    branches: [django-cicd]
+    paths:
+      - 3.2-crud/stocks_products/**
 
 jobs:
   tests:
