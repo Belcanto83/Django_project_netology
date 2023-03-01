@@ -13,7 +13,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """
         Команда создает новую базу данных PostgreSQL.
-        Имя новой базы данных задается в файле конфигурации проекта 'settings.py' в разделе 'DATABASES'.
+        Имя новой базы данных задается в файле конфигурации
+        проекта 'settings.py' в разделе 'DATABASES'.
         """
 
         data_base = settings.DATABASES
@@ -29,7 +30,8 @@ class Command(BaseCommand):
             cur = con.cursor()
             try:
                 cur.execute(
-                    sql.SQL("CREATE DATABASE {}").format(sql.Identifier(new_db_name))
+                    sql.SQL("CREATE DATABASE {}").
+                    format(sql.Identifier(new_db_name))
                 )
             except psycopg2.errors.DuplicateDatabase:
                 print(f'База данных с именем "{new_db_name}" уже существует!')
