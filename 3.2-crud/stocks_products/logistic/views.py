@@ -53,4 +53,4 @@ def index(request):
 class TestCICDView(APIView):
     @staticmethod
     def get(request):
-        return Response('Hello World!')
+        return Response('Hello, Everybody!')
